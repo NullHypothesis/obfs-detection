@@ -97,9 +97,9 @@ class Obfs4Torrc(BasicTorrc):
         self['ClientTransportPlugin'] = 'obfs4 exec %s managed' % (prog)
 
         self['Bridge'] = [
-            'obfs4 192.36.61.78:49183 8AE881313F877DEA9A98ABAAC6EF72812054540F cert=YqNXlzN2OzYnTcqQvRQcRZK1VWcaWU2XsLthGWhXVNhHKZogfGfzIZgqK1T4GwHHNcTWLQ iat-mode=0',
-            'obfs4 192.36.27.61:40078 7F00CD73A1977CC19B5FBB4C187DD4411E32FE95 cert=HZmC73SIcaL5WUB9pccpBtE2wtXinr4gbu1GwWgc2duem5TFX5Dqo+2VXXW3reFdQ+EcQQ iat-mode=0',
-            'obfs4 176.56.237.144:80 0A94AAA5BAB7CCA6F94B0ACA97870FAF28CD3643 cert=KvEtOV1agbGCftLolDbSWgrZ+hqtgfA4rMLYoOpfhLEl4LwmjpK7dld60Z8gh0b5z2zGSA iat-mode=0',
+            'obfs4 38.229.1.78:80 C8CBDB2464FC9804A69531437BCF2BE31FDD2EE4 cert=Hmyfd2ev46gGY7NoVxA9ngrPF2zCZtzskRTzoWXbxNkzeVnGFPWmrTtILRyqCTjHR+s9dg iat-mode=1',
+            'obfs4 192.95.36.142:443 CDF2E852BF539B82BD10E27E9115A31734E378C2 cert=qUVQ0srL1JI/vO6V6m/24anYXiJD3QP2HgzUKQtQ7GRqqUvs7P+tG43RtAqdhLOALP7DJQ iat-mode=1',
+            'obfs4 37.218.240.34:40035 88CD36D45A35271963EF82E511C8827A24730913 cert=eGXYfWODcgqIdPJ+rRupg4GGvVGfh25FWaIXZkit206OSngsp7GAIiGIXOJJROMxEqFKJg iat-mode=1',
         ]
 
 class MeekATorrc(BasicTorrc):
