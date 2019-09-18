@@ -158,7 +158,7 @@ def kill_proc(process_name):
             res = execute("taskkill /f /t /im %s" % process_name)
         return res
     else:
-        execute("kill_all %s" % process_name)
+        execute("killall %s" % process_name)
 
 def kill_all():
     """clean all processes"""
