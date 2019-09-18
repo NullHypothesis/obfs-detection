@@ -303,7 +303,7 @@ class TorTraceCollector(object):
             cmd = "windump -s 0 -w %s not udp port 1900" % (filename)
             self.dump_process = subprocess.Popen(cmd.split(), shell=False)
         else:
-            cmd = "echo '%s' | sudo -S tcpdump -w %s &" % (USER_PASSWORD, filename)
+            cmd = "tcpdump -w %s &" % (filename)
             self.dump_process = subprocess.Popen(cmd, shell=True,  preexec_fn=os.setsid)
 
     def dump_end(self):
@@ -313,7 +313,7 @@ class TorTraceCollector(object):
             os.kill(self.dump_process.pid, signal.SIGTERM)
         else:
             os.killpg(self.dump_process.pid, signal.SIGINT)
-            cmd = "echo '%s' | sudo kill_all -9 tcpdump" % USER_PASSWORD
+            cmd = "kill_all -9 tcpdump"
             self.dump_process = subprocess.Popen(cmd, shell=True,  preexec_fn=os.setsid)
 
     def pt_clean(self, key):
@@ -413,7 +413,7 @@ def run_with(pt, domain_list, start, end, round_no):
                 pass
             kill_tor()
             tc.driver_close()
-            os.popen("echo '%s' | sudo rm -rf /tmp/tmp*" % USER_PASSWORD)
+            os.popen("rm -rf /tmp/tmp*")
         time.sleep(1)
         try:
             tc.dump_end()
